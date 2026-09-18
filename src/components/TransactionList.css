@@ -1,0 +1,61 @@
+.transaction-list-empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.empty-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.transaction-list-empty h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.transaction-list-empty p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(100vh - 150px);
+  overflow: hidden;
+}
+
+.list-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.list-header h3 {
+  font-size: 1.2rem;
+}
+
+.list-items {
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
