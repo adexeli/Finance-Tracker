@@ -2,8 +2,22 @@ import { useState, useEffect } from 'react'
 import DashboardSummary from './components/DashboardSummary'
 import TransactionForm from './components/TransactionForm'
 import TransactionList from './components/TransactionList'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('finance_tracker_theme');
+    if (saved === 'dark' || saved === 'light') {
+      return saved;
+    }
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('finance_tracker_theme', theme);
+  }, [theme]);
+
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem('finance_tracker_data');
     if (saved) {
@@ -39,6 +53,11 @@ function App() {
 
   return (
     <>
+      <ThemeToggle 
+        theme={theme} 
+        onToggle={() => setTheme(prev => prev === 'dark' ? 'light' : 'dark')} 
+      />
+      
       <header className="animate-slide-up">
         <h1>Finance <span className="text-gradient">Tracker</span></h1>
         <p>Keep track of your income and expenses simply.</p>

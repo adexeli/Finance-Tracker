@@ -1,20 +1,4 @@
 :root {
-  /* Colors */
-  --bg-color: #0f172a;
-  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --surface-color: rgba(30, 41, 59, 0.7);
-  --surface-border: rgba(255, 255, 255, 0.1);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  
-  --accent-income: #10b981;
-  --accent-income-light: rgba(16, 185, 129, 0.15);
-  --accent-expense: #ef4444;
-  --accent-expense-light: rgba(239, 68, 68, 0.15);
-  
-  --accent-primary: #3b82f6;
-  --accent-primary-hover: #2563eb;
-
   /* Typography */
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
   
@@ -26,6 +10,43 @@
   /* Transitions */
   --transition-fast: 0.15s ease-in-out;
   --transition-normal: 0.3s ease-in-out;
+
+  /* Theme colors (dark is default) */
+  --bg-color: #0f172a;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --surface-color: rgba(30, 41, 59, 0.7);
+  --surface-hover: rgba(30, 41, 59, 0.8);
+  --surface-border: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --tile-bg: rgba(15, 23, 42, 0.4);
+  --tag-bg: rgba(15, 23, 42, 0.5);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  
+  --accent-income: #10b981;
+  --accent-income-light: rgba(16, 185, 129, 0.15);
+  --accent-expense: #ef4444;
+  --accent-expense-light: rgba(239, 68, 68, 0.15);
+  
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+}
+
+[data-theme='light'] {
+  --bg-color: #e2e8f0;
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  --surface-color: rgba(255, 255, 255, 0.85);
+  --surface-hover: rgba(255, 255, 255, 1);
+  --surface-border: rgba(15, 23, 42, 0.12);
+  --input-bg: #ffffff;
+  --tile-bg: rgba(255, 255, 255, 0.7);
+  --tag-bg: rgba(15, 23, 42, 0.06);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+}
+
+body {
+  transition: background var(--transition-normal), color var(--transition-normal);
 }
 
 * {
@@ -88,7 +109,7 @@ body {
 input, select {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--input-bg);
   border: 1px solid var(--surface-border);
   border-radius: 8px;
   color: var(--text-primary);
