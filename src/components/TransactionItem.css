@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.25rem;
-  background: rgba(30, 41, 59, 0.4);
+  background: var(--tile-bg);
   border: 1px solid transparent;
   border-radius: 12px;
   transition: all var(--transition-fast);
@@ -11,7 +11,7 @@
 }
 
 .transaction-item:hover {
-  background: rgba(30, 41, 59, 0.8);
+  background: var(--surface-hover);
   border-color: var(--surface-border);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
@@ -42,7 +42,7 @@
 .item-category {
   font-size: 0.8rem;
   color: var(--text-secondary);
-  background: rgba(15, 23, 42, 0.5);
+  background: var(--tag-bg);
   padding: 0.15rem 0.5rem;
   border-radius: 12px;
   display: inline-block;
